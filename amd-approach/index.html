@@ -1,0 +1,26 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AMD Example</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.js"></script>
+    <script>
+        // Define module using AMD
+        // module.js
+        define('add', [], function() {
+            return function(a, b) {
+                return a + b;
+            };
+        });
+
+        // Importing module
+        // app.js
+        require(['add'], function(addFunction) {
+            console.log(addFunction(2, 3)); // Output: 5
+        });
+    </script>
+</head>
+<body>
+    <!-- You can leave the body empty -->
+</body>
+</html>
