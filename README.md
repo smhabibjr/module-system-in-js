@@ -121,7 +121,7 @@ The error message "SyntaxError: Cannot use import statement outside a module" ty
 
 There is several options to solve this problem:
 
-1. Specify 'package.json'
+1-way: Specify 'package.json'
 
 Root file create a 'package.json' file and specify "type":"module" like below
 
@@ -133,8 +133,48 @@ Root file create a 'package.json' file and specify "type":"module" like below
 ```
 Now exsicute app.js file again you will see the result in console.
 
-We can also use that inside browser. like this.
+We can also use module.js inside browser. like this.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="module">
+        import { add } from './module.js'
 
+        console.log(add(2,5));
+    </script>
+</head>
+<body>
+</body>
+</html>
+```
 
+2-way: Change the file extension to `.mjs`
 
-2. 
+```js
+// module.js --> module.mjs
+
+// app.js --> app.mjs
+
+// execute app.mjs
+
+node app.mjs 
+
+// output
+```
+We can also import this module inside .html file like this.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="module">
+        import { add } from './module.mjs'
+
+        console.log(add(10,5));
+    </script>
+</head>
+<body>
+</body>
+</html>
+```
