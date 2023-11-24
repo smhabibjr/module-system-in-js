@@ -111,5 +111,30 @@ import { add } from './module.js';
 console.log(add(2, 3)); // Output: 5
 ```
 
-Not realy why ? we will get this error when you exsicute node app.js in our commad line.
+Not realy. why ? we will get error like below when you exsicute app.js in commad line.
+```error
+SyntaxError: Cannot use import statement outside a module
+```
+why we are getting this error. well 
 
+The error message "SyntaxError: Cannot use import statement outside a module" typically occurs in Node.js when you attempt to use an import statement in a CommonJS module (a file with .js extension) rather than an ECMAScript module (a file with .mjs extension or when using "type": "module" in package.json).
+
+There is several options to solve this problem:
+
+1. Specify 'package.json'
+
+Root file create a 'package.json' file and specify "type":"module" like below
+
+```json
+// package.json
+{
+    "type": "module"
+}
+```
+Now exsicute app.js file again you will see the result in console.
+
+We can also use that inside browser. like this.
+
+
+
+2. 

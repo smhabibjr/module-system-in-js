@@ -1,3 +1,3 @@
-import { add } from "./module";
+import { add } from "./module.js";
 
 console.log(add(2,5));
